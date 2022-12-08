@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.Home">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/search"
+            android:imeOptions="actionSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toLeftOf="@+id/imgCart"
+            android:background="@drawable/oval_edit_text"
+            android:drawableStart="@drawable/ic_search"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="10dp"
+            android:drawableTint="#85000000"
+            android:fontFamily="@font/rubik_light"
+            android:hint="Yuk Belanja Obat untuk Tanamanmu"
+            android:padding="10dp"
+            android:textColorHint="@color/green"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/imgCart"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cart"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            />
+
+
+    </RelativeLayout>
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:orientation="horizontal"-->
+<!--        android:id="@+id/rec_kategori"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KATEGORI"
+        android:fontFamily="@font/rubik_medium"
+        android:textStyle="bold"
+        android:textColor="@color/oyen"
+        android:layout_margin="@dimen/_10sdp"
+        />
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        app:columnCount="4">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_herbicide"
+            app:layout_columnWeight="1" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_insecticide"
+            app:layout_columnWeight="1" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_pesticide"
+            app:layout_columnWeight="1" />
+    </androidx.gridlayout.widget.GridLayout>
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shimmer_layout">
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/grid_layout"
+            xmlns:grid="http://schemas.android.com/apk/res-auto"
+            grid:alignmentMode="alignBounds"
+            grid:columnCount="2"
+            grid:rowOrderPreserved="false"
+            grid:useDefaultMargins="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                grid:layout_columnWeight="1"
+                android:gravity="center"
+                layout="@layout/smimmer_rec" />
+            <include
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                grid:layout_columnWeight="1"
+                android:gravity="center"
+                layout="@layout/smimmer_rec" />
+            <include
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                grid:layout_columnWeight="1"
+                android:gravity="center"
+                layout="@layout/smimmer_rec" />
+            <include
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                grid:layout_columnWeight="1"
+                android:gravity="center"
+                layout="@layout/smimmer_rec" />
+            <include
+                android:layout_margin="20dp"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                grid:layout_columnWeight="1"
+                android:gravity="center"
+                layout="@layout/smimmer_rec" />
+            <include
+                android:layout_margin="20dp"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                grid:layout_columnWeight="1"
+                android:gravity="center"
+                layout="@layout/smimmer_rec" />
+        </androidx.gridlayout.widget.GridLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recV"
+        android:visibility="invisible"
+        tools:listitem="@layout/item_pics"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

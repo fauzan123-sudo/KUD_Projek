@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.penjualan.ui.fragment.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+
+        <action
+            android:id="@+id/action_home_to_keranjang"
+            app:destination="@id/keranjang" />
+        <action
+            android:id="@+id/action_home_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/keranjang"
+        android:name="com.example.penjualan.ui.fragment.Keranjang"
+        android:label="fragment_keranjang"
+        tools:layout="@layout/fragment_keranjang" >
+
+        <action
+            android:id="@+id/action_keranjang_to_pesanan"
+            app:destination="@id/pesanan" />
+        <action
+            android:id="@+id/action_keranjang_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pesanan"
+        android:name="com.example.penjualan.ui.fragment.Pesanan"
+        android:label="fragment_pesanan"
+        tools:layout="@layout/fragment_pesanan" >
+
+        <action
+            android:id="@+id/action_pesanan_to_akun"
+            app:destination="@id/akun" />
+        <action
+            android:id="@+id/action_pesanan_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/akun"
+        android:name="com.example.penjualan.ui.fragment.Akun"
+        android:label="fragment_akun"
+        tools:layout="@layout/fragment_akun" >
+        <action
+            android:id="@+id/action_akun_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.penjualan.ui.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_home"
+            app:destination="@id/home" />
+    </fragment>
+</navigation>

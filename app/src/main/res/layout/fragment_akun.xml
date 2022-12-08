@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.Akun">
+
+    <LinearLayout
+        android:id="@+id/linearProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:orientation="vertical"
+        android:padding="50dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/fauzan2"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="0dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/textCom"
+        android:layout_below="@id/linearProfile"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/rubik_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ketuk Untuk Ubah"
+            />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textCom"
+        android:layout_marginTop="80dp"
+        android:stretchColumns="1">
+
+        <TableRow android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:layout_column="1"
+                android:fontFamily="@font/rubik_medium"
+                android:padding="3dip"
+                android:text="Nama"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/nama"
+                android:ellipsize="end"
+                android:fontFamily="@font/rubik_light"
+                android:gravity="start"
+                android:maxEms="15"
+                android:maxLines="1"
+                android:padding="3dip"
+                android:text="Ahmad Dwy Fauzan"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="#BDCAD2" />
+
+        <TableRow android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:layout_column="1"
+                android:fontFamily="@font/rubik_medium"
+                android:padding="3dip"
+                android:text="Ttl"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:fontFamily="@font/rubik_light"
+                android:gravity="start"
+                android:padding="3dip"
+                android:text="Nganjuk, 04 Mei 1998"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="#BDCAD2" />
+        <TableRow android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:layout_column="1"
+                android:fontFamily="@font/rubik_medium"
+                android:padding="3dip"
+                android:text="Alamat"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:fontFamily="@font/rubik_light"
+                android:gravity="start"
+                android:padding="3dip"
+                android:text="Nganjuk"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="#BDCAD2" />
+        <TableRow android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:layout_column="1"
+                android:fontFamily="@font/rubik_medium"
+                android:padding="3dip"
+                android:text="NIK"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:fontFamily="@font/rubik_light"
+                android:gravity="start"
+                android:padding="3dip"
+                android:text="351817040001"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="#BDCAD2" />
+        <TableRow android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:layout_column="1"
+                android:fontFamily="@font/rubik_medium"
+                android:padding="3dip"
+                android:text="Email"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/emails"
+                android:fontFamily="@font/rubik_light"
+                android:gravity="start"
+                android:padding="3dip"
+                android:text="fauzanggsangat@gmail.com"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="#BDCAD2" />
+
+        <TableRow android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:layout_column="1"
+                android:fontFamily="@font/rubik_medium"
+                android:padding="3dip"
+                android:text="No Tlp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/nomer"
+                android:fontFamily="@font/rubik_light"
+                android:gravity="start"
+                android:padding="3dip"
+                android:text="085608727991"
+                android:textColor="@color/black" />
+        </TableRow>
+        <View
+            android:layout_height="1dip"
+            android:background="#BDCAD2" />
+    </TableLayout>
+
+
+
+</RelativeLayout>
