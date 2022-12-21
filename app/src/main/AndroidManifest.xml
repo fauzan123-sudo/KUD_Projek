@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Penjualan"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.Beranda"
             android:exported="false" />
         <activity
@@ -23,7 +26,7 @@
             android:exported="false" />
         <activity android:name=".ui.activity.Login" />
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".ui.activity.SplashScreen"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

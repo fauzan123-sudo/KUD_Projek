@@ -24,6 +24,13 @@ class UserPreferences(context:Context) {
         preferences[KEY_AUTH]
     }
 
+    suspend fun clear() {
+        dataStore.edit { preferences ->
+            preferences.clear()
+        }
+    }
+
+
     suspend fun saveAuthToken(authToken: String){
         dataStore.edit{ preferences ->
             preferences[KEY_AUTH] = authToken

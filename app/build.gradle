@@ -38,7 +38,12 @@ android {
 
     buildFeatures {
         viewBinding true
+
     }
+
+    
+
+
 }
 
 dependencies {
@@ -56,8 +61,8 @@ dependencies {
 
     implementation 'nl.joery.animatedbottombar:library:1.0.9'
 
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation 'com.synnapps:carouselview:0.1.4'
@@ -105,11 +110,16 @@ dependencies {
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
 //    Glide library
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.13.0"
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
 
     def lottieVersion = "3.7.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
     implementation 'com.github.dotlottie:dotlottieloader-android:v1.0'
+
+//    Paper Db
+    implementation 'io.github.pilgr:paperdb:2.7.2'
 }

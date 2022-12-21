@@ -1,73 +1,75 @@
 package com.example.penjualan.ui.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
-import com.example.penjualan.R
-import com.example.penjualan.UserPreferences
-import com.example.penjualan.repository.Repository
-import com.example.penjualan.ui.viewModel.MainViewModel
-import com.example.penjualan.ui.viewModel.ViewModelFactory
-import com.example.penjualan.util.SessionManager
-import kotlinx.android.synthetic.main.fragment_akun.*
+import com.example.penjualan.databinding.FragmentAkunBinding
+import com.example.penjualan.model.Resource
+import com.example.penjualan.network.UserApi
+import com.example.penjualan.network.response.akun.Data
+import com.example.penjualan.repository.UserRepository
+import com.example.penjualan.ui.viewModel.AkunViewModel
+import com.example.penjualan.util.visible
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
 
-class Akun : Fragment() {
-    private lateinit var viewModel: MainViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-       val view = inflater.inflate(R.layout.fragment_akun, container, false)
+class Akun : BaseFragment<AkunViewModel, FragmentAkunBinding, UserRepository>() {
 
-        val userPrefernces = UserPreferences(requireContext())
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
-        userPrefernces.authToken.asLiveData().observe(viewLifecycleOwner) {
-
-            Toast.makeText(requireContext(), "doesnt token exist", Toast.LENGTH_SHORT).show()
-            val action = AkunDirections.actionAkunToLoginFragment()
-            findNavController().navigate(action)
+        userPreferences.authToken.asLiveData().observe(viewLifecycleOwner) {
+            if (it == null) findNavController().navigate(AkunDirections.actionAkunToLoginFragment())
         }
 
+        binding.progressbar.visible(false)
 
+        viewModel.getUser()
 
-//        val token = SessionManager.getToken(requireActivity())
-//        if (!token.isNullOrBlank()) {
-//
-//        }else{
-//            val action = AkunDirections.actionAkunToLoginFragment()
-//            findNavController().navigate(action)
-//            Toast.makeText(requireActivity(), "empty token", Toast.LENGTH_SHORT).show()
-//        }
+        viewModel.user.observe(viewLifecycleOwner) {
+            binding.progressbar.visible(it is Resource.Loading)
+            when (it) {
+                is Resource.Success -> {
+                    binding.progressbar.visible(false)
+                    updateUI(it.value.user.data)
+                    Log.d("akun", "${it.value.user.data}")
+                }
+                is Resource.Loading -> {
+                    binding.progressbar.visible(true)
+                }
+                is Resource.Failure -> {
+                    Toast.makeText(requireContext(), "$it", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
 
-
-
-//        val viewModelFactory = ViewModelFactory(repository)
-//
-//        viewModel = ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
-//        viewModel.dataPegawaiPersonal(6)
-//        viewModel.myCustomPosts.observe(viewLifecycleOwner) { response ->
-//            if (response.isSuccessful) {
-//                Log.i("TAG", ""+ response.body()?.toString())
-//                nama.text = response.body()?.toString()
-//            } else {
-//                nama.text = response.body()?.toString()
-//            }
-//        }
-
-
-        return view
+        binding.logOut.setOnClickListener {
+            logOut()
+        }
     }
 
-    private fun checkToken() {
-
+    private fun updateUI(data: Data) {
+        with(binding){
+            name.text = data.name
+            emails.text = data.email
+        }
     }
 
+    override fun getViewModel() = AkunViewModel::class.java
+
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentAkunBinding.inflate(inflater, container, false)
+
+    override fun getFragmentRepository(): UserRepository {
+        val token = runBlocking { userPreferences.authToken.first() }
+        val api = remoteDataSource.buildApi(UserApi::class.java, token)
+        return UserRepository(api)
+    }
 }

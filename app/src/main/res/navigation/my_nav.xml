@@ -11,13 +11,21 @@
         android:name="com.example.penjualan.ui.fragment.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-
         <action
             android:id="@+id/action_home_to_keranjang"
             app:destination="@id/keranjang" />
         <action
             android:id="@+id/action_home_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_home_to_detailBarang"
+            app:destination="@id/detailBarang" />
+        <action
+            android:id="@+id/action_home_to_detailProduct"
+            app:destination="@id/detailProduct" />
+        <action
+            android:id="@+id/action_home_to_allProduct"
+            app:destination="@id/allProduct" />
     </fragment>
     <fragment
         android:id="@+id/keranjang"
@@ -61,6 +69,45 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_loginFragment_to_akun"
+            app:destination="@id/akun" />
+        <action
+            android:id="@+id/action_loginFragment_to_pesanan"
+            app:destination="@id/pesanan" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailBarang"
+        android:name="com.example.penjualan.ui.fragment.DetailBarang"
+        android:label="fragment_detail_barang"
+        tools:layout="@layout/fragment_detail_barang" />
+    <dialog
+        android:id="@+id/detailProduct"
+        android:name="com.example.penjualan.ui.fragment.DetailProduct"
+        android:label="fragment_detail_product"
+        tools:layout="@layout/fragment_detail_product" >
+        <action
+            android:id="@+id/action_detailProduct_to_home"
+            app:destination="@id/home"
+            app:popUpTo="@id/home" />
+        <argument
+            android:name="detail"
+            app:argType="com.example.penjualan.model.detail.Data" />
+        <action
+            android:id="@+id/action_detailProduct_to_keranjang"
+            app:destination="@id/keranjang" />
+    </dialog>
+    <fragment
+        android:id="@+id/allProduct"
+        android:name="com.example.penjualan.ui.fragment.AllProduct"
+        android:label="fragment_all_product"
+        tools:layout="@layout/fragment_all_product" >
+        <action
+            android:id="@+id/action_allProduct_to_detailProduct"
+            app:destination="@id/detailProduct" />
+        <action
+            android:id="@+id/action_allProduct_to_home"
             app:destination="@id/home" />
     </fragment>
 </navigation>

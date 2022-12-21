@@ -1,10 +1,5 @@
 package com.example.penjualan.repository
 
-import com.example.penjualan.network.Resource
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import retrofit2.Response
-
 abstract class BaseRepo() {
 
 //    // we'll use this function in all

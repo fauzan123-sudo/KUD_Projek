@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:paddingBottom="8dp"
-    >
+    android:layout_margin="@dimen/_10sdp"
+    android:padding="5dp"
+    app:cardCornerRadius="20dp">
+
+    <LinearLayout
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_margin="10dp"
-            android:id="@+id/imgObat"
-            android:src="@drawable/ic_pesticide"
-            android:layout_width="50dp"
-            android:layout_height="50dp"/>
+            android:id="@+id/grid_item_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/bannera"
+            />
 
         <TextView
-            android:layout_margin="10dp"
-            android:textAlignment="center"
-            android:id="@+id/txtObat"
-            android:layout_below="@id/imgObat"
+            android:id="@+id/grid_item_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pestsida"/>
+            android:layout_marginTop="5px"
+            android:text="roundup"
 
-</RelativeLayout>
+            android:textSize="15px"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

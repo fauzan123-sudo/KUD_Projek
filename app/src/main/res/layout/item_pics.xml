@@ -4,8 +4,6 @@
     android:layout_width="match_parent"
     android:background="@color/black"
     app:cardCornerRadius="20dp"
-    android:elevation="20dp"
-    app:cardElevation="20dp"
     app:strokeWidth="1dp"
     app:strokeColor="@color/cream"
     android:layout_centerHorizontal="true"
@@ -22,6 +20,7 @@
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/iv_image"
             android:src="@drawable/bannera"
+            app:strokeColor="@null"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/lvLayout"
@@ -37,16 +36,8 @@
             android:orientation="vertical"
             android:padding="@dimen/_4sdp">
 
-<!--            <TextView-->
-<!--                android:id="@+id/tvImageId"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center_horizontal"-->
-<!--                android:text="1"-->
-<!--                android:textSize="@dimen/_12ssp" />-->
-
             <TextView
-                android:id="@+id/tvImageSize"
+                android:id="@+id/nama_obat"
                 android:fontFamily="@font/rubik_light"
                 android:textColor="@color/black"
                 android:layout_width="wrap_content"
@@ -57,7 +48,7 @@
                 android:textSize="@dimen/_10ssp" />
 
             <TextView
-                android:id="@+id/tvImageAuthor"
+                android:id="@+id/harga_obat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

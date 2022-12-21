@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/drawable/bg_login_page1.xml" value="0.181" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/drawable/blak_border.xml" value="0.1715" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/drawable/drawable_bottomsheet_background.xml" value="0.1715" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1715" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/drawable/ic_minus_disable.xml" value="0.1715" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/drawable/round_one.xml" value="0.1715" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/drawable/rounded_button.xml" value="0.1715" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/font/font.xml" value="0.23645833333333333" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/font/rubik.xml" value="0.2375" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/font/rubik_medium.xml" value="0.2375" />
@@ -14,13 +17,20 @@
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/activity_beranda.xml" value="0.22" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/activity_home.xml" value="0.3940594059405941" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/activity_login.xml" value="0.20729166666666668" />
-        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/fragment_akun.xml" value="0.33" />
-        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/activity_main.xml" value="0.29947328818660646" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/activity_splash_screen.xml" value="0.20625" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/data_keranjang.xml" value="0.25" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/fragment_akun.xml" value="0.22" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/fragment_all_product.xml" value="0.20729166666666668" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/fragment_detail_barang.xml" value="0.22" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/fragment_detail_product.xml" value="0.25" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/fragment_keranjang.xml" value="0.20729166666666668" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/item_barang.xml" value="0.30089717046238784" />
-        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/item_kategori_obat.xml" value="0.20729166666666668" />
-        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/item_pics.xml" value="0.25" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/item_kategori.xml" value="0.33" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/item_kategori_obat.xml" value="0.9" />
+        <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/item_pics.xml" value="1.25" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/produk_list_item.xml" value="0.20729166666666668" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/row_layout.xml" value="0.20729166666666668" />
         <entry key="..\:/aplikasi/Penjualan/app/src/main/res/layout/smimmer_rec.xml" value="0.33" />

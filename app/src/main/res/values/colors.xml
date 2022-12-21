@@ -5,11 +5,15 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="kelabu">#989898</color>
+    <color name="kelabu_text">#969393</color>
     <color name="black">#000000</color>
     <color name="cream">#B8AFAF</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#2C974A</color>
     <color name="oyen">#F8983F</color>
     <color name="smimmer">#dddddd</color>
+    <color name="greys">#dddddd</color>
+    <color name="red">#EF2B2B</color>
 
 </resources>

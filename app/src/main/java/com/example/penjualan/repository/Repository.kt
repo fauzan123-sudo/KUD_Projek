@@ -1,26 +1,19 @@
 package com.example.penjualan.repository
 
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
-import com.example.penjualan.UserPreferences
 import com.example.penjualan.network.RetrofitInstance
-import com.example.penjualan.network.response.PicsResponse
-import com.example.penjualan.network.response.Post
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import retrofit2.Response
 
 class Repository() {
 
-        suspend fun getPictures() = RetrofitInstance.picsumApi.getPictures()
-
-        suspend fun getData() : Response<PicsResponse> {
-                return RetrofitInstance.picsumApi.getPictures()
-        }
-
-        suspend fun pushPost(): Response<List<Post>> {
-                return RetrofitInstance.api.getPost()
-        }
+//        suspend fun getPictures() = RetrofitInstance.picsumApi.getPictures()
+//
+//        suspend fun getData() : Response<PicsResponse> {
+//                return RetrofitInstance.picsumApi.getPictures()
+//        }
+//
+//        suspend fun pushPost(): Response<List<Post>> {
+//                return RetrofitInstance.api.getPost()
+//        }
 
         suspend fun loginUser(email:String,password:String) = RetrofitInstance.api.loginUser(email,password)
 

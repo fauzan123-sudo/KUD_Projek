@@ -8,14 +8,13 @@
     tools:context=".ui.activity.MainActivity">
 
     <fragment
-        android:layout_above="@id/bottomView"
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/bottomView"
         app:defaultNavHost="true"
         app:navGraph="@navigation/my_nav" />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         app:menu="@menu/bottom"

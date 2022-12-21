@@ -1,12 +1,16 @@
 package com.example.penjualan.util
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.penjualan.model.Resource
 import com.example.penjualan.ui.activity.MainActivity
+import com.example.penjualan.ui.fragment.BaseFragment
+import com.example.penjualan.ui.fragment.LoginFragment
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
@@ -17,6 +21,10 @@ fun <A : Activity> Activity.startNewActivity(activity: Class<A>) {
         startActivity(it)
     }
 }
+
+//fun <C : Fragment> Fragment.moveToLogin(fragment: Fragment){
+//
+//}
 
 fun View.visible(isVisible: Boolean) {
     visibility = if (isVisible) View.VISIBLE else View.GONE
@@ -47,21 +55,23 @@ fun Fragment.handleApiError(
     failure: Resource.Failure,
     retry: (() -> Unit)? = null
 ) {
-//    when {
-//        failure.isNetworkError -> requireView().snackbar(
-//            "Please check your internet connection",
-//            retry
-//        )
-//        failure.errorCode == 401 -> {
-//            if (this is LoginFragment) {
-//                requireView().snackbar("You've entered incorrect email or password")
-//            } else {
-//                logout()
-//            }
-//        }
-//        else -> {
-//            val error = failure.errorBody?.string().toString()
-//            requireView().snackbar(error)
-//        }
-//    }
+    when {
+        failure.isNetworkError -> requireView().snackbar(
+            "Please check your internet connection",
+            retry
+        )
+        failure.errorCode == 401 -> {
+            if (this is LoginFragment) {
+                requireView().snackbar("You've entered incorrect email or password")
+            } else {
+                (this as BaseFragment<*, *, *>).logOut()
+            }
+        }
+        else -> {
+            val error = failure.errorBody?.string().toString()
+            requireView().snackbar(error)
+        }
+    }
 }
+
+fun Context.toast(message: String) = Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
